@@ -4,6 +4,7 @@ import { RdModulesManager } from "@radts/reactjs";
 import React, { useEffect, useState } from "react";
 import { List } from "immutable";
 import { MessageItem } from "../message-item/MessageItem";
+import { imgChatWithWorld } from "@/application/services/assets";
 
 interface MessageFrameProps {
   userId: string;
@@ -37,6 +38,7 @@ const MessageFrame = React.memo(
           height: "100%",
           flexDirection: "column-reverse",
           overflowY: "auto",
+          backgroundImage: `url("http://localhost:5000/images/img-chat-bg.webp")`,
         }}
       >
         <div

@@ -57,16 +57,18 @@ export const MessageItem = ({
             alignItems: isSender ? "flex-end" : "flex-start",
           }}
         >
-          <span
-            style={{
-              color: "#333333",
-              fontSize: "16px",
-              lineHeight: "24px",
-              fontWeight: "600",
-            }}
-          >
-            {name}
-          </span>
+          {!isSender && (
+            <span
+              style={{
+                color: "#FFFF00",
+                fontSize: "16px",
+                lineHeight: "24px",
+                fontWeight: "600",
+              }}
+            >
+              {name}
+            </span>
+          )}
           <span
             className="column"
             style={{
