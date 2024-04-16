@@ -101,4 +101,3 @@ export const MessageItem = ({
     </div>
   );
 };
-

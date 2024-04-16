@@ -111,7 +111,7 @@ function App() {
       });
 
       return () => {
-        console.log("unmount mini app");
+        console.debug("unmount mini app");
         socket.close();
       };
     }
@@ -215,22 +215,24 @@ function App() {
             maxHeight: "120px",
             width: "100%",
             padding: "8px",
+            background: "#FFFFFF",
+            border: "1px solid pink",
+            color: "#000000",
           }}
           ref={refTextMessage}
           placeholder="Gửi tin nhắn đi"
         />
-
+        {/* 
         <button
           onClick={() => {
             refFormMessage?.current?.submit();
           }}
         >
           Gửi
-        </button>
+        </button> */}
       </form>
     </div>
   );
 }
 
 export default App;
-

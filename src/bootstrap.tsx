@@ -6,8 +6,8 @@ import { AppRepository } from "./application/services/app-repository";
 import { AppSession } from "./application/services/app-session";
 
 const mount = (mountPoint: HTMLElement, initPathName: string) => {
-  console.log(mountPoint);
-  console.log(initPathName);
+  // console.log(mountPoint);
+  // console.log(initPathName);
   const rdManager = new RdModulesManager();
   rdManager
     .use(new AppRepository("http://localhost:6969"))
@@ -24,4 +24,3 @@ const mount = (mountPoint: HTMLElement, initPathName: string) => {
 };
 
 export { mount };
-

@@ -21,7 +21,6 @@ const MessageFrame = React.memo(
       let currentMessage: List<MessageModel> = List<MessageModel>();
       const rdManager = new RdModulesManager();
       rdManager.get<AppSession>("AppSession").message.subscribe((mes) => {
-        console.log(mes);
         if (mes && mes.Group?.id === groupId) {
           currentMessage = currentMessage.push(mes);
           setState(currentMessage);
@@ -71,4 +70,3 @@ const MessageFrame = React.memo(
 MessageFrame.displayName = "MessageFrame";
 
 export default MessageFrame;
-

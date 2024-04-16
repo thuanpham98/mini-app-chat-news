@@ -21,4 +21,3 @@ export class MessageControllerApi {
     return ret.data;
   }
 }
-

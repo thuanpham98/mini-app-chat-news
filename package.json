@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "prettier --write src/ && eslint src/ && vite build",
     "build:dev": "vite build && cp .env dist/ && vite build --emptyOutDir=false --watch",
     "preview": "vite preview --port 5000",
     "generate:message-protoc": "protoc --ts_out src/infrastructure/message-protobuf --proto_path src/infrastructure/message-protobuf src/infrastructure/message-protobuf/message.proto"
