@@ -38,7 +38,6 @@ const MessageFrame = React.memo(
           height: "100%",
           flexDirection: "column-reverse",
           overflowY: "auto",
-          backgroundImage: `url("http://localhost:5000/images/img-chat-bg.webp")`,
         }}
       >
         <div

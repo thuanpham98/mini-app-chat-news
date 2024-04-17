@@ -1,5 +1,5 @@
 import "@/styles";
-import { InputChat } from "./components/input-chat/InputChat";
+import "./index.css";
 import { useEffect, useRef, useState } from "react";
 import { RdModulesManager, useRdQuery } from "@radts/reactjs";
 import {
@@ -162,6 +162,7 @@ function App() {
         height: "100%",
         backgroundColor: "#FFFFFF",
         boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+        backgroundImage: `url("http://localhost:5000/images/img-chat-bg.webp")`,
       }}
     >
       <div
@@ -176,6 +177,7 @@ function App() {
           lineHeight: "24px",
           fontWeight: "600",
           borderBottom: "1px solid gray",
+          backgroundColor: "rgba(255, 255, 255, 1)",
         }}
       >
         <span>{"Trò chuyện 4 phương"}</span>
@@ -201,35 +203,23 @@ function App() {
         }}
         className="row"
         style={{
-          width: "100%",
+          width: "80%",
           height: "fit-content",
           margin: 0,
+          backgroundColor: "rgba(255, 255, 255, 0.4)",
+          backdropFilter: "blur(5px)",
+          border: "none",
+          borderRadius: "12px",
         }}
       >
         <textarea
+          className="input-message"
           role="textbox"
           rows={5}
           form={`form-${groupID}`}
-          style={{
-            resize: "none",
-            maxHeight: "120px",
-            width: "100%",
-            padding: "8px",
-            background: "#FFFFFF",
-            border: "1px solid pink",
-            color: "#000000",
-          }}
           ref={refTextMessage}
           placeholder="Gửi tin nhắn đi"
         />
-        {/* 
-        <button
-          onClick={() => {
-            refFormMessage?.current?.submit();
-          }}
-        >
-          Gửi
-        </button> */}
       </form>
     </div>
   );

@@ -19,7 +19,7 @@ export const MessageItem = ({
         justifyContent: isSender ? "flex-end" : "flex-start",
       }}
     >
-      {message.type.valueOf() === MessageModelType.FILE.valueOf() && (
+      {/* {message.type.valueOf() === MessageModelType.FILE.valueOf() && (
         <a
           rel="noreferrer"
           target="_blank"
@@ -46,7 +46,7 @@ export const MessageItem = ({
           src={`http://localhost:6969/api/v1/storage/public/image/${message.content}`}
           style={{ width: "320px" }}
         />
-      )}
+      )} */}
       {message.type.valueOf() === MessageModelType.TEXT.valueOf() && (
         <div
           className="column"
