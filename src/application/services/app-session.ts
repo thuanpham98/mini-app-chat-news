@@ -1,6 +1,5 @@
 import { RdModule } from "@radts/reactjs";
 import { BehaviorSubject } from "rxjs";
-import { LoginStatus } from "../models/LoginStatus";
 import { MessageModel } from "@/domain/chat";
 
 export class AppSession extends RdModule {

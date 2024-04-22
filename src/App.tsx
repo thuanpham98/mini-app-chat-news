@@ -10,8 +10,12 @@ import {
 import { AppRepository } from "./application/services/app-repository";
 import { AppSession } from "./application/services/app-session";
 import MessageFrame from "./components/message-frame/MessageFrame";
+import { imgChatBg } from "./application/services/assets";
+import { Environment } from "./application/services/environment";
 
-const groupID = "fd9f05db-8e81-45ef-8d16-759d7932034d";
+// const groupID = import.meta.env.CHAT_WITH_WORLD_GROUP_ID;
+// console.log(groupID);
+//  "fd9f05db-8e81-45ef-8d16-759d7932034d";
 
 function App() {
   const [isLoading, setLoading] = useState(true);
@@ -74,24 +78,21 @@ function App() {
   useEffect(() => {
     if (dataUserInfo && isSuccessUserInfo && isSuccessListUser) {
       const rdModule = new RdModulesManager();
-
-      const socket = new WebSocket(`ws://localhost:6969/group/ws/${groupID}`);
+      const socket = new WebSocket(
+        `${Environment.hostWsGroup}/${Environment.groupId}`,
+      );
       socket.binaryType = "arraybuffer";
-      // Connection opened
+
       socket.addEventListener("open", () => {
         setLoading(false);
-        // socket.send("Hello Server!");
       });
-
       socket.addEventListener("close", () => {
         console.error("socker . isclose");
       });
-
       socket.addEventListener("error", (e) => {
         console.error("socker is error", e);
       });
 
-      // Listen for messages
       socket.addEventListener("message", (event) => {
         const data = new Uint8Array(event.data as ArrayBuffer);
         const resp = MessageReponse.fromBinary(data);
@@ -126,7 +127,7 @@ function App() {
           receiver: "",
           type: MessageType.TEXT,
           group: {
-            id: "fd9f05db-8e81-45ef-8d16-759d7932034d",
+            id: Environment.groupId,
             name: "Trò chuyện 4 phương",
           },
         }),
@@ -162,7 +163,7 @@ function App() {
         height: "100%",
         backgroundColor: "#FFFFFF",
         boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-        backgroundImage: `url("http://localhost:5000/images/img-chat-bg.webp")`,
+        backgroundImage: `url("${imgChatBg}")`,
       }}
     >
       <div
@@ -191,11 +192,11 @@ function App() {
           });
           return map;
         })()}
-        groupId={groupID}
+        groupId={Environment.groupId}
         userId={dataUserInfo?.id ?? ""}
       />
       <form
-        id={`form-${groupID}`}
+        id={`form-${Environment.groupId}`}
         ref={refFormMessage}
         onSubmit={(e) => {
           e.preventDefault();
@@ -216,7 +217,7 @@ function App() {
           className="input-message"
           role="textbox"
           rows={5}
-          form={`form-${groupID}`}
+          form={`form-${Environment.groupId}`}
           ref={refTextMessage}
           placeholder="Gửi tin nhắn đi"
         />

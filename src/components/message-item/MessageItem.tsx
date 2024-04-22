@@ -19,34 +19,6 @@ export const MessageItem = ({
         justifyContent: isSender ? "flex-end" : "flex-start",
       }}
     >
-      {/* {message.type.valueOf() === MessageModelType.FILE.valueOf() && (
-        <a
-          rel="noreferrer"
-          target="_blank"
-          href={`http://localhost:6969/api/v1/storage/public/image/${message.content}`}
-          className="column"
-          style={{
-            width: "fit-content",
-            minWidth: "36px",
-            maxWidth: "calc(100% - 84px)",
-            textAlign: "start",
-            backgroundColor: isSender ? "#FFC0CB" : "#303030",
-            color: isSender ? "#212121" : "#FFFFFF",
-            padding: "8px",
-            borderRadius: "12px",
-            whiteSpace: "initial",
-            wordBreak: "break-word",
-          }}
-        >
-          {message.content}
-        </a>
-      )}
-      {message.type.valueOf() === MessageModelType.IMAGE.valueOf() && (
-        <img
-          src={`http://localhost:6969/api/v1/storage/public/image/${message.content}`}
-          style={{ width: "320px" }}
-        />
-      )} */}
       {message.type.valueOf() === MessageModelType.TEXT.valueOf() && (
         <div
           className="column"

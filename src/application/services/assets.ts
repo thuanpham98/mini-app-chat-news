@@ -1,3 +1,8 @@
-const imgPath = import.meta.env.CHAT_WITH_WORLD_HOST;
+import { Environment } from "./environment";
 
-export const imgChatWithWorld = `${imgPath}/chat-with-everyone/images/img-chat-bg.webp`;
+const imgPath = `${Environment.hostApp}/images`;
+
+// images
+export const imgChatBg = `${imgPath}/img-chat-bg.webp`;
+
+// icons
