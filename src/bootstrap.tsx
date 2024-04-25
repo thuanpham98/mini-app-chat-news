@@ -9,7 +9,6 @@ import { Environment } from "./application/services/environment";
 const mount = (mountPoint: HTMLElement, initPathName: string) => {
   const rdManager = new RdModulesManager();
   rdManager.use(new AppRepository(Environment.hostAPI)).use(new AppSession());
-  console.log(Environment);
   const root = ReactDOM.createRoot(mountPoint);
   root.render(
     <Suspense>

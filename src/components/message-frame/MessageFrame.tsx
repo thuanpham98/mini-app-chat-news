@@ -4,7 +4,6 @@ import { RdModulesManager } from "@radts/reactjs";
 import React, { useEffect, useState } from "react";
 import { List } from "immutable";
 import { MessageItem } from "../message-item/MessageItem";
-import { imgChatWithWorld } from "@/application/services/assets";
 
 interface MessageFrameProps {
   userId: string;
@@ -14,7 +13,6 @@ interface MessageFrameProps {
 
 const MessageFrame = React.memo(
   ({ groupId, userId, groupMember }: MessageFrameProps) => {
-    console.debug("chat reset");
     const [state, setState] =
       useState<List<MessageModel>>(List<MessageModel>());
 

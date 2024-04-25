@@ -13,10 +13,6 @@ import MessageFrame from "./components/message-frame/MessageFrame";
 import { imgChatBg } from "./application/services/assets";
 import { Environment } from "./application/services/environment";
 
-// const groupID = import.meta.env.CHAT_WITH_WORLD_GROUP_ID;
-// console.log(groupID);
-//  "fd9f05db-8e81-45ef-8d16-759d7932034d";
-
 function App() {
   const [isLoading, setLoading] = useState(true);
 
